@@ -26,7 +26,7 @@ Edit the .env file and add the following environment variables:
 - DEFECTDOJO_URL: The URL of your DefectDojo instance.
 - DD_API_KEY: API key for authentication.
 - ENGAGEMENT_ID: The engagement ID in DefectDojo where the report will be uploaded.
-- ZAP_REPORT: The absolute or relative path to your Burp Suite scan report (XML format).
+- ZAP_REPORT: The absolute or relative path to your ZAP scan report (XML format).
 
  Make sure your Burp scan report exists at the specified path before proceeding.
  
