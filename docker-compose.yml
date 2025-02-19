@@ -1,0 +1,10 @@
+services:
+  defectdojo-uploader:
+    build: .
+    container_name: defectdojo-zap-uploader
+    env_file:
+      - .env
+    volumes:
+      - ./zap_report.xml:/app/zap_report.xml:ro
+    restart: "no"  # Prevents container from restarting
+    command: ["/app/upload.sh"]
