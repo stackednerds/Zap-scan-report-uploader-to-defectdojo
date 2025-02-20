@@ -1,0 +1,21 @@
+services:
+  zap:
+    image: zaproxy/zap-stable
+    container_name: owasp-zap
+    command: >
+      zap.sh -cmd -quickurl https://test.com -quickout /zap/reports/zap_report.xml
+    volumes:
+      - ./zap_reports:/zap/reports
+    restart: "no"
+
+  defectdojo-uploader:
+    build: .
+    container_name: defectdojo-zap-uploader
+    env_file:
+      - .env
+    volumes:
+      - ./zap_reports/zap_report.xml:/app/zap_report.xml:ro
+    depends_on:
+      - zap
+    restart: "no"
+    command: ["/app/upload.sh"]
