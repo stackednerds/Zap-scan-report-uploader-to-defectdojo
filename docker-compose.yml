@@ -5,6 +5,6 @@ services:
     env_file:
       - .env
     volumes:
-      - ./zap_report.xml:/app/zap_report.xml:ro
+      - ./${ZAP_REPORT}:/app/zap_report.xml:ro
     restart: "no"  # Prevents container from restarting
     command: ["/app/upload.sh"]
