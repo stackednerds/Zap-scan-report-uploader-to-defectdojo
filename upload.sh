@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ZAP_REPORT="/app/zap_report.xml"
 # Ensure required variables are set
 if [[ -z "$DEFECTDOJO_URL" || -z "$DD_API_KEY" || -z "$ENGAGEMENT_ID" || -z "$ZAP_REPORT" ]]; then
   echo "Error: Missing required environment variables."
